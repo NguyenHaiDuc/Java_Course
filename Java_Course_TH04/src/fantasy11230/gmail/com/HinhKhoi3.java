@@ -18,7 +18,7 @@ public class HinhKhoi3 extends HinhKhoi {
 	}
 
 	public double thetich3() {
-		return chieucao * 3.14 * Math.pow(bankinh, 2);
+		return chieucao * Math.PI * Math.pow(bankinh, 2);
 	}
 
 }
