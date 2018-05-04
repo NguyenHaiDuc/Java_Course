@@ -1,34 +1,44 @@
 package dnhthanh.hueic.edu.vn;
-
 public class Round {
 	private float R;// Bán kính
 	private Point O;// Tâm
-
+ 
 	public Round() {
 		this.setR(Math.round(Math.random() * 100));
 		this.setO(new Point());
 	}
 
-	// Xét vị trí tương đối điểm với đường tròn: nếu nằm trong - trả về -1; nếu nằm
-	// ngoài - trả về 1; nếu nằm trên - trả về 0
-	public int ViTriTuongDoiDiemVoiDuongTron(Point A) {
-
-		return 0;
-	}
-
-	public float getR() {
+	private float getR() {
 		return R;
 	}
 
-	public void setR(float r) {
+	private void setR(float r) {
 		R = r;
 	}
 
-	public Point getO() {
+	private Point getO() {
 		return O;
 	}
 
-	public void setO(Point o) {
+	private void setO(Point o) {
 		O = o;
 	}
+
+	// Xét vị trí tương đối điểm với đường tròn: nếu nằm trong - trả về -1; nếu nằm
+	// ngoài - trả về 1; nếu nằm trên - trả về 0
+	public int ViTriTuongDoiDiemVoiDuongTron(Point A) {
+		// khoảng cách giữa 2 điểm :
+		// this.x this.y <--> M{x,y}
+		// sqrt((this.x - M.x)^2 + (this.y - M.y)^2)
+		float result = (float) Math.sqrt(Math.pow(A.getX() - O.getX(), 2) + Math.pow(A.getY() - O.getY(), 2));
+		if (result == R) {
+			return 0;
+		} else if (result < R) {
+			return -1;
+		} else if (result > R) {
+			return 1;
+		}
+		return 0;
+	}
+
 }
