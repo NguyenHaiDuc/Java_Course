@@ -1,28 +1,40 @@
 package fantasy11230.gmail.com;
 
 public class Vector2D extends AVector {
-	public Vector2D(float x, float y) {
-		this.x = x;
-		this.y = y;
+	protected float X;
+	protected float Y;
+	public float getX() {
+		return X;
 	}
 
+	public void setX(float x) {
+		X = x;
+	}
+
+	public float getY() {
+		return Y;
+	}
+
+	public void setY(float y) {
+		Y = y;
+	}
+
+	
 	@Override
-	public double tinhDoDai() {
+	public float tinhDoDai() {
 		int a = 0;
-		// TODO Auto-generated method stub
 		return Math.abs(a);
+	}
+
+	@Override
+	public float sinGoc() {
 		
+		return Math.sqrt(1 - Math.pow(a, b));
 	}
 
 	@Override
-	public double sinGoc() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public double trucGiao() {
-		// TODO Auto-generated method stub
+	public boolean trucGiao() {
+		
 		return 0;
 	}
 	
